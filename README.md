@@ -1,1 +1,1 @@
-readme
+Un grande el Diego, The Blue Hell ahora tiene su propia página web, con una gran colaboración de GatorOnFire y Mark-kus.
