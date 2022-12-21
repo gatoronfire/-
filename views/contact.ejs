@@ -1,14 +1,13 @@
 <% layout('./layouts/boilerplate') %>
-    <header>
-    </header>
-    <section class="center">
-        <p>ProductoX ofrece la mejor calidad y rendimiento del mercado, ningun otro producto va a</p>
-        <p>ProductoX ofrece la mejor calidad y rendimiento del mercado, ningun otro producto va a</p>
-        <p>ProductoX ofrece la mejor calidad y rendimiento del mercado, ningun otro producto va a</p>
-    </section>
 
-    <section class="center">
-        <li><img src="/images/logo.png" alt="telescope"></li>
-        <li><img src="/images/logo.png" alt="telescope"></li>
-        <li><img src="/images/logo.png" alt="telescope"></li>
-    </section>
+    <div id="users">
+        <% for (let user in currentUsers) { %>
+            <div class="user">
+                <%= currentUsers[user].description %>
+                <p>Is admin: <%= currentUsers[user].isAdmin %></p>
+                <p>Is gay: <%= currentUsers[user].gei %></p>
+                <p>Is humble: <%= currentUsers[user].humble %></p>
+
+            </div>
+            <% } %>
+    </div>
