@@ -15,13 +15,10 @@ app.get('/contact', (req, res) => {
   res.render('contact');
 });
 
-<<<<<<< HEAD
 app.get('/location', (req, res) => {
   res.render('location');
 });
 
-=======
->>>>>>> fa702b4544d1357cdc59b2bf4112957687a35075
 app.listen(3000, () => {
   console.log('Listening at port 3000')
 });

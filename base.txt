@@ -1,4 +1,3 @@
-<% layout('./layouts/boilerplate') %>
 
     esto es <strong>bold</strong><br>
     esto es <em>italic</em>
