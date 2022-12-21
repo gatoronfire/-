@@ -1,4 +1,9 @@
+@font-face {
+    font-family: japanese;
+    src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+  }
 body {
+    font-family:japanese;
     background-color: grey;
     margin: 0px;
     padding: 0px;
@@ -56,6 +61,8 @@ p {
 }
 
 #footer {
+    width: 50px;
+    height: 50px;
     list-style-type: none;
     background-color: black;
     color: white;
