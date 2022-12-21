@@ -40,7 +40,6 @@ nav li {
     display: flex;
     justify-content: space-around;
     list-style-type: none;
-    /* ---------------------------------*/
     background: white;
     margin: 0;
     padding: 50px 0 50px 0;
@@ -61,6 +60,14 @@ p {
     color: white;
     display: flex;
     justify-content: space-around;
+    padding: 50px 0 30px;
+}
+
+#navbar {
+    color: white;
+    display: inline;
+    margin-right: 20px;
+    text-decoration-line: none;
 }
 #navbar a {
     color: white;
