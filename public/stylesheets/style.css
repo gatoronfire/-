@@ -53,13 +53,15 @@ p {
 }
 
 #footer {
+    width: 100%;
     list-style-type: none;
     background-color: black;
     color: white;
     display: flex;
     justify-content: space-around;
     padding: 10px 0 10px;
-    
+    position:absolute;
+    bottom: 0;
 }
 
 #footer a img{
