@@ -1,0 +1,14 @@
+<% layout('./layouts/boilerplate') %>
+<div id="roles">
+    <% for (let rol in roles) { %>
+        <div class="role">
+            <h3 class="roleName"><%= roles[rol].name %></h3>
+            <div class="line"></div>
+            <li><%= roles[rol].description %></li>
+           <li>Is admin: <%= roles[rol].isAdmin %></li>
+            <li>Is of type: <%= roles[rol].isType %></li>
+            <li>Color: <%= roles[rol].color %></li>
+
+        </div>
+        <% } %>
+</div>
