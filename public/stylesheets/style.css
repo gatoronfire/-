@@ -97,6 +97,7 @@ flex-wrap: wrap;
     justify-content: space-around;
     flex-direction: column;
     border-radius: 5px;
+    
 }
 .user li{
     display: flex;

@@ -1,20 +1,22 @@
 module.exports.currentUsers = {
-    sirDoge: {
-        name:'sirDoge',
+    SirDoge: {
+        name:'SirDoge',
         gei: true,
         isAdmin: true,
         description: 'Un tierno perro de 3 cabeza, devora hombres',
         humble: true
     },
-    gatorOnFire: {
-        name:'gatorOnFire',
+    GatorOnFire: {
+        name:'GatorOnFire',
         gei: true,
         isAdmin: false,
         description: 'Aún con ese chicho, no existe mayor devora hombres que él',
-        humble: false
+        humble: false,
+        hex: '#6d0d0e'
+
     },
-    martha: {
-        name:'martha',
+    Martha: {
+        name:'Martha',
         gei: true,
         isAdmin: true,
         description: 'La mujer del servidor, no es realmente una mujer, o si?',
