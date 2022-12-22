@@ -16,5 +16,11 @@ module.exports.currentUsers = {
         isAdmin: true,
         description: 'La mujer del servidor, no es realmente una mujer, o si?',
         humble: false
+    },
+    ElPelucaChoripanero: {
+        gei: true,
+        isAdmin: false,
+        description: 'Un enano caliente por varios motivos, "con peron esto no pasaba"',
+        humble:false
     }
 }
