@@ -3,6 +3,7 @@
     <div id="users">
         <% for (let user in currentUsers) { %>
             <div class="user">
+                <p><%= currentUsers[user].name %></p>
                 <p><%= currentUsers[user].description %></p>
                 <p>Is admin: <%= currentUsers[user].isAdmin %></p>
                 <p>Is gay: <%= currentUsers[user].gei %></p>

@@ -76,12 +76,14 @@ p {
     text-decoration-line: none;
 }
 
-#users p{
+#users {
     
-    width: 25%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 20px;
 }
 .user{
-    display:flex;
-    margin-top: 10px;
+    display: grid;
+    grid-template-rows: max-content 200px 1fr;
     background-color: crimson;
 }
