@@ -97,10 +97,10 @@ flex-wrap: wrap;
     justify-content: space-around;
     flex-direction: column;
     border-radius: 10px;
-    
+    box-shadow: 0 0 4px 2px rgb(32, 32, 32);
 }
 .user li, .role li{
- 
+    margin: 10;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -108,16 +108,17 @@ flex-wrap: wrap;
     text-align: center;
     padding: 0 2px 5px 2px;
     font-size: 20px;
+
 }
 .line{
     height: 2px;
     width: 90%;
-    margin: 0 auto 0 auto;
+    margin: 10px auto 10px auto;
     background-color: gray;
 }
 .name, .roleName{
 text-align: center;
-margin: 0;
+margin: 10px;
 font-size: 200%;
 height: 2px;
 }
