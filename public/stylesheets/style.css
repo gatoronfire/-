@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 body {
     font-family:"Oswald";
-    background-color: grey;
+    background-color: #3b3e45;
     margin: 0px;
     padding: 0px;
 }
@@ -81,6 +81,7 @@ p {
 }
 
 #users, #roles{
+    color: white;
     display: flex;
 justify-content: space-around;
 align-content: center;
@@ -91,7 +92,7 @@ flex-wrap: wrap;
     width: 28%;
     height: 400px;
     margin: 20px 0 20px;
-    background-color: white;
+    background-color: #2f3136;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
