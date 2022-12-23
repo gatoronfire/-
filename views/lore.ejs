@@ -5,9 +5,14 @@
             <h3 class="roleName"><%= roles[rol].name.charAt(0).toUpperCase() + roles[rol].name.slice(1) %></h3>
             <div class="line"></div>
             <li><%= roles[rol].description %></li>
-           <li>Is admin: <%= roles[rol].isAdmin %></li>
-            <li>Is of type: <%= roles[rol].isType %></li>
-            <li>Color: <%= roles[rol].color %></li>
+
+            <% if (roles[rol].isAdmin) { %> 
+           <li>Tiene permisos de administrador</li>
+           <% } else { %>
+            <li>No tiene permisos de administrador</li>
+            <% } %> 
+
+            <li>Es de tipo: <%= roles[rol].isType %></li>
 
         </div>
         <% } %>
