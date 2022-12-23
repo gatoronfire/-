@@ -7,7 +7,7 @@ module.exports.currentUsers = {
         humble: true
     },
     GatorOnFire: {
-        name:'GatorOnFire',
+        name:'gatorOnFire',
         gei: true,
         isAdmin: false,
         description: 'Aún con ese chicho, no existe mayor devora hombres que él',

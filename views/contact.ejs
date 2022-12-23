@@ -3,7 +3,7 @@
     <div id="users">
         <% for (let user in currentUsers) { %>
             <div class="user">
-                <h3 class="name"><%= currentUsers[user].name %></h3>
+                <h3 class="name"><%= currentUsers[user].name.charAt(0).toUpperCase() + currentUsers[user].name.slice(1) %></h3>
                 <div class="line"></div>
                 <li><%= currentUsers[user].description %></li>
                <li>Is admin: <%= currentUsers[user].isAdmin %></li>
