@@ -60,7 +60,6 @@ p {
     display: flex;
     justify-content: space-around;
     padding: 10px 0 10px;
-    position:absolute;
     bottom: 0;
 }
 
@@ -89,14 +88,14 @@ flex-wrap: wrap;
 }
 
 .user{
-    width: 350px;
-    height: 180px;
-    margin: 20px;
+    width: 31%;
+    height: 400px;
+    margin: 20px 1% 20px 1%;
     background-color: white;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    border-radius: 5px;
+    border-radius: 10px;
     
 }
 .user li{
@@ -108,7 +107,7 @@ flex-wrap: wrap;
     padding: 0 2px 5px 2px;
 }
 .line{
-    height: 1px;
+    height: 2px;
     width: 90%;
     margin: 0 auto 0 auto;
     background-color: gray;
