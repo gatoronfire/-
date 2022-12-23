@@ -88,9 +88,9 @@ flex-wrap: wrap;
 }
 
 .user{
-    width: 31%;
+    width: 28%;
     height: 400px;
-    margin: 20px 1% 20px 1%;
+    margin: 20px 0 20px;
     background-color: white;
     display: flex;
     justify-content: space-around;
@@ -115,4 +115,6 @@ flex-wrap: wrap;
 .name{
 text-align: center;
 margin: 0;
+font-size: 200%;
+height: 2px;;
 }
