@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
 body {
     font-family:"Oswald";
     background-color: #3b3e45;
@@ -63,7 +63,7 @@ p {
     bottom: 0;
 }
 
-#footer a img{
+#footer a img, a{
     display: inline-block;
     width: 40px;
     height: 40px;
