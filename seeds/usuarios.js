@@ -26,7 +26,7 @@ module.exports.currentUsers = {
         name:'ElPelucaChoripanero',
         gei: true,
         isAdmin: false,
-        description: 'Un enano caliente por varios motivos, "con peron esto no pasaba"',
+        description: 'Un enano caliente en varios sentidos, "con peron esto no pasaba"',
         humble:false
     }
 }
