@@ -139,6 +139,28 @@ height: 2px;
     overflow: hidden;
     border-radius: 50%;
 }
+.joining{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+.joining nav a{
+    color: #374eca;
+    border: 0;
+    padding: 0;
+    width: 150px;
+    height: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: "Oswald";
+    display: flex;
+    justify-content:center;
+    background-color: #2f3136;
+    box-shadow: 0 0 4px 2px rgb(32, 32, 32);
+    text-decoration-line: none;
+}
+
 
 
 
