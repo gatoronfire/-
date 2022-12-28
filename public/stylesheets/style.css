@@ -149,8 +149,7 @@ height: 2px;
     border: 0;
     padding: 0;
     width: 150px;
-    height: 25px;
-    border-radius: 10px;
+    height: 30px;
     margin-top: 20px;
     font-size: 20px;
     font-family: "Oswald";
@@ -159,6 +158,11 @@ height: 2px;
     background-color: #2f3136;
     box-shadow: 0 0 4px 2px rgb(32, 32, 32);
     text-decoration-line: none;
+    border-radius: 40px;
+}
+.joining nav a:hover{
+    color: white;
+    transition-duration: 2s;
 }
 
 
