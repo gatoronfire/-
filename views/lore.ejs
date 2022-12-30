@@ -4,7 +4,7 @@
         <div class="role">
             <h3 class="roleName"><%= roles[rol].name.charAt(0).toUpperCase() + roles[rol].name.slice(1) %></h3>
             <div class="line"></div>
-            <li><%= roles[rol].description %></li>
+            <li class="smol"><%= roles[rol].description %></li>
 
             <% if (roles[rol].isAdmin) { %> 
            <li>Tiene permisos de administrador</li>

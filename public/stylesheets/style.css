@@ -176,7 +176,9 @@ display: flex;
 justify-content: space-around;
 flex-direction: column;
 }
-
+.smol{
+    height: 120px;
+}
 
 
 
