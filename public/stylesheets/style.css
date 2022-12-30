@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
+:root{
+    --heretic: rgb(255, 255, 255);
+    --winged: rgb(122, 201, 253);
+}
+
 body {
     font-family:"Oswald";
     background-color: #3b3e45;
@@ -83,7 +88,7 @@ p {
 }
 
 #users, #roles{
-    color: white;
+    
     display: flex;
 justify-content: space-around;
 align-content: center;
@@ -101,9 +106,10 @@ margin-bottom: 80px;
     flex-direction: column;
     border-radius: 10px;
     box-shadow: 0 0 4px 2px rgb(32, 32, 32);
+
 }
 .user li, .role li{
-    margin: 10;
+    margin: 10px;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -119,7 +125,7 @@ margin-bottom: 80px;
     margin: 10px auto 10px auto;
     background-color: gray;
 }
-.name, .roleName{
+#name, .roleName{
 text-align: center;
 margin: 10px;
 font-size: 200%;
@@ -162,7 +168,13 @@ height: 2px;
 }
 .joining nav a:hover{
     color: white;
-    transition-duration: 2s;
+    transition-duration: 1s;
+}
+.dropdown_content{
+    height: 270px;
+display: flex;
+justify-content: space-around;
+flex-direction: column;
 }
 
 

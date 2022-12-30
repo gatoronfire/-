@@ -4,7 +4,8 @@ module.exports.currentUsers = {
         gei: true,
         isAdmin: true,
         description: 'Un tierno perro de 3 cabeza, devora hombres',
-        humble: true
+        humble: true,
+        rol: "--winged"
     },
     GatorOnFire: {
         name:'gatorOnFire',
@@ -28,5 +29,26 @@ module.exports.currentUsers = {
         isAdmin: false,
         description: 'Un enano caliente en varios sentidos, "con peron esto no pasaba"',
         humble:false
+    },
+    CatFührer: {
+        name:'Cat Führer',
+        gei: true,
+        isAdmin: false,
+        description: 'la pesadilla de hitler, un negro judio',
+        humble:false
+    },
+    ElRoky: {
+        name:'ElRoky',
+        gei: true,
+        isAdmin: false,
+        description: 'El shoky',
+        humble:false  
+    },
+    violinlibertario: {
+        name:'violinlibertario',
+        gei: true,
+        isAdmin: false,
+        description: 'Pedobear le tiene miedo por su capacidad de violin',
+        humble:false  
     }
 }
