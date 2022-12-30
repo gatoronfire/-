@@ -4,7 +4,7 @@
         <% for (let user in currentUsers) { %>
             <div class="user">
                 
-                <h3 id="name")"><%= currentUsers[user].name.charAt(0).toUpperCase() + currentUsers[user].name.slice(1); %></h3>
+                <h3 id="name" class="<%= currentUsers[user].rol %>"><%= currentUsers[user].name.charAt(0).toUpperCase() + currentUsers[user].name.slice(1); %></h3>
                 <div class="line"></div>
                 <div class="dropdown_content">
                 <li><%= currentUsers[user].description %></li>

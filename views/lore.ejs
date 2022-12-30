@@ -1,7 +1,7 @@
 <% layout('./layouts/boilerplate') %>
 <div id="roles">
     <% for (let rol in roles) { %>
-        <div class="role">
+        <div class="role <%= roles[rol].name %>">
             <h3 class="roleName"><%= roles[rol].name.charAt(0).toUpperCase() + roles[rol].name.slice(1) %></h3>
             <div class="line"></div>
             <li class="smol"><%= roles[rol].description %></li>

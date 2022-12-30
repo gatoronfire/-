@@ -4,6 +4,14 @@
     --winged: rgb(122, 201, 253);
 }
 
+.winged {
+    color: var(--winged);
+}
+
+.heretic {
+    color: var(--heretic);
+}
+
 body {
     font-family:"Oswald";
     background-color: #3b3e45;

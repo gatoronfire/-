@@ -5,7 +5,7 @@ module.exports.currentUsers = {
         isAdmin: true,
         description: 'Un tierno perro de 3 cabeza, devora hombres',
         humble: true,
-        rol: "--winged"
+        rol: "winged"
     },
     GatorOnFire: {
         name:'gatorOnFire',
@@ -13,8 +13,8 @@ module.exports.currentUsers = {
         isAdmin: false,
         description: 'Aún con ese chicho, no existe mayor devora hombres que él',
         humble: false,
-        hex: '#6d0d0e'
-
+        hex: '#6d0d0e',
+        rol: 'heretic'
     },
     Martha: {
         name:'Martha',
