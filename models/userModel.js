@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
     usernames: String,
-    roleNames: String
+    roleNames: String,
+    color: String
 });
 
 module.exports = mongoose.model('User', UserSchema);
