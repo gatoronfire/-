@@ -2,13 +2,14 @@ if (process.env.NODE_ENV !== "production") {
     require('dotenv').config();
 }
 const mongoose = require('mongoose');
+const { EmbedBuilder } = require('discord.js');
 const connectionString = process.env.DB_URL;
-const User = require('./bot/userModel.js')
+const User = require('./models/userModel')
 const { Collection } = require("discord.js");
 //---//
 const Discord = require('discord.js');
 const client = new Discord.Client();
-
+let count = 0;
 let results = '';
 
 function loginDB(){
@@ -47,38 +48,48 @@ client.on('message', message =>{
 
     if(command == 'up'){
         message.guild.members.fetch().then(m => {
+            count =0;
             let usernames = m.map(u => u.user.username);
     
             //let roleNumbers = m.map(u => u.roles.cache.filter((roles) => roles.id !== message.guild.id).map((role) => role.toString()));
-    
+            //let isAdmin = message.member.permissions.has((1 << 3));
+            let color = m.map(u => u.displayHexColor);
+            
             let roleNames = m.map(u => u.roles.cache.filter((roles) => roles.id !== message.guild.id).map((role) => role.name));
 
             for(let i=0; i< usernames.length; i++){ 
                 const user = new User({
                     usernames: usernames[i].toString(),
-                    roleNames: roleNames[i].toString()
+                    roleNames: roleNames[i].toString(),
+                    color: color[i].toString()
                 });
-    
+                
                 User.find({usernames: usernames[i].toString()}).then(result =>{
-                    if(result.length == 0){
+                    
+                    if(result.length < 1){
                         
                         user.save()
                             .then(result =>{/*console.log(result)*/})
                             .catch(err =>{console.error(err);});
-    
+                             count++;
                     }});
+                   
           }
-            message.channel.send('uploaded ');
+            message.channel.send('uploaded ' + count + ' users');
         }); //end message fetch 
     }else{if(command == 'use'){
-        
-        User.find().select({_id: 0, usernames: 1}).then(result =>{
+        results = '';
+        User.find().select({_id: 0, usernames: 1, color:1}).then(result =>{
             //console.log(result);
             if(result.length > 0){
                 for(let i = 0; result.length > i; i++){
-                    results += result[i].usernames + '\n';
+                    //results += result[i].usernames + ' ' + result[i].color + '\n';
+                    const newEmbed = new Discord.MessageEmbed()
+                    .setColor(result[i].color)
+                    .addFields({name: result[i].usernames.toString()});
+                    message.channel.send(newEmbed);
                 }
-                message.channel.send(results);
+                
             }else{message.channel.send('files not founded');}
         });
     }else{if(command == 'd'){
