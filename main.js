@@ -3,7 +3,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 const mongoose = require('mongoose');
 const connectionString = process.env.DB_URL;
-const User = require('./bot/userModel.js')
+const User = require('./models/userModel.js')
 const { Collection } = require("discord.js");
 //---//
 const Discord = require('discord.js');
