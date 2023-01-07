@@ -13,7 +13,6 @@ module.exports.currentUsers = {
         isAdmin: false,
         description: 'Aún con ese chicho, no existe mayor devora hombres que él',
         humble: false,
-        hex: '#6d0d0e',
         rol: 'heretic'
     },
     Martha: {
