@@ -79,19 +79,27 @@ client.on('message', message =>{
         }); //end message fetch 
     }else{if(command == 'use'){
         results = '';
-        User.find().select({_id: 0, usernames: 1, color:1}).then(result =>{
-            //console.log(result);
-            if(result.length > 0){
-                for(let i = 0; result.length > i; i++){
-                    //results += result[i].usernames + ' ' + result[i].color + '\n';
-                    const newEmbed = new Discord.MessageEmbed()
-                    .setColor(result[i].color)
-                    .addFields({name: result[i].usernames.toString()});
-                    message.channel.send(newEmbed);
+        message.guild.fetch().then(m =>{
+            let Usernames = (u => u.members.user.username);
+                User.find().select({_id: 0, usernames: 1, color:1}).then(result =>{
+                //console.log(result);
+                for(let i =0; i< result.length; i++){
+                    if(result.usernames[i] != Usernames[i]){
+                            if(result.length > 0){
+                        for(let i = 0; result.length > i; i++){
+                            //results += result[i].usernames + ' ' + result[i].color + '\n';
+                            const newEmbed = new Discord.MessageEmbed()
+                            .setColor(result[i].color)
+                            .addFields({name: result[i].usernames.toString()});
+                            message.channel.send(newEmbed);
+                        }
+                        
+                    }else{message.channel.send('files not founded');}
                 }
-                
-            }else{message.channel.send('files not founded');}
+               }
+            })
         });
+        
     }else{if(command == 'd'){
         User.deleteMany().then(message.channel.send('deleted User'));
     }}}

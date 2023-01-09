@@ -76,9 +76,39 @@ client.on('message', message =>{
   const command = args.shift().toLowerCase();
 
   if(command == 'up'){
+    message.guild.members.fetch().then(m => {
+      count =0;
+      let usernames = m.map(u => u.user.username);
+
+      //let roleNumbers = m.map(u => u.roles.cache.filter((roles) => roles.id !== message.guild.id).map((role) => role.toString()));
+      //let isAdmin = message.member.permissions.has((1 << 3));
+      let color = m.map(u => u.displayHexColor);
+      
+      let roleNames = m.map(u => u.roles.cache.filter((roles) => roles.id !== message.guild.id).map((role) => role.name));
+
+      for(let i=0; i< usernames.length; i++){ 
+          const user = new User({
+              usernames: usernames[i].toString(),
+              roleNames: roleNames[i].toString(),
+              color: color[i].toString()
+          });
+          
+          User.find({usernames: usernames[i].toString()}).then(result =>{
+              
+              if(result.length < 1){
+                  
+                  user.save()
+                      .then(result =>{/*console.log(result)*/})
+                      .catch(err =>{console.error(err);});
+                       count++;
+              }});
+             
+    }
+      message.channel.send('uploaded ' + count + ' users');
+  });
        //end message fetch 
   }else{if(command == 'use'){
-      results = '';
+      let results = '';
       User.find().select({_id: 0, usernames: 1, color:1}).then(result =>{
           //console.log(result);
           if(result.length > 0){
