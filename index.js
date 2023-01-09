@@ -31,6 +31,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/contact', async (req, res) => {
+  const currentUsers = await User.find();
   res.render('contact', { currentUsers });
 });
 
