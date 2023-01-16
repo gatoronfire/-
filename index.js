@@ -43,91 +43,102 @@ app.listen(3000, () => {
   console.log('Listening at port 3000');
 });
 
-function loginDB(){
+function loginDB() {
   const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/thebluehell';
-mongoose.connect(dbUrl, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
-mongoose.connection.once('open', () => {
-  console.log('Database connected');
-});
+  mongoose.connect(dbUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
+  mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
+  mongoose.connection.once('open', () => {
+    console.log('Database connected');
+  });
 
-mongoose.connect(connectionString,{
-  useNewURLParser: true,
-  useUnifiedTopology:true,
-  useFindAndModify:false,
-  useCretorIndex:true
-})
-.then(()=> {
-  console.log('conectado a la base de datos');
-}).catch(err => {console.error(err)});
+  mongoose.connect(connectionString, {
+    useNewURLParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCretorIndex: true
+  })
+    .then(() => {
+      console.log('conectado a la base de datos');
+    }).catch(err => { console.error(err) });
 }
 loginDB();
 
-client.once('ready',() =>{
+client.once('ready', () => {
   console.log('final bot online')
 });
 
-client.on('message', message =>{
-  if(!message.content.startsWith(prefix) || message.author.bot) return;
+async function guildUp(name) {
+  const Guild = client.guilds.cache.get('1058504488773746760');
+  //Guild.members.fetch().then(members => {
+    Guild.members.fetch().then(m => {
+
+      let usernames = m.map(u => u.user.username);
+      let color = m.map(u => u.displayHexColor);
+      let roleNames = m.map(u => u.roles.cache.filter((roles) => roles.id !== Guild.id).map((role) => role.name));
+
+    
+
+      for (let i = 0; i < usernames.length; i++) {
+        const user = new User({
+          userNames: usernames[i].toString(),
+          roleNames: roleNames[i].toString(),
+          color: color[i].toString()
+        });
+
+        User.find({ userNames: usernames[i].toString() }).then(result => {
+          
+          if (result.length == 0) {
+            user.save()
+              .then(result => {/*console.log(result)*/ })
+              .catch(err => { console.error(err); });
+              count++;
+            console.log(count + ' of 3');
+            if(i == usernames.length-1){
+              if(count != 0){name.channel.send('uploaded ' + count + ' users');}
+            }
+          }else{
+            name.channel.send('no new users');
+            i = usernames.length;
+      }});//name.channel.send('uploaded ' + count + ' users');
+        
+      }
+    });
+  //});
+  count = 0;
+}
+
+function guildDown(message) {
+  let results = '';
+  User.find().select({ _id: 0, userNames: 1, color: 1 }).then(result => {
+    if (result.length > 0) {
+      for (let i = 0; result.length > i; i++) {
+        results += result[i].userNames + ' ' + result[i].color + '\n';
+      } message.channel.send(results);
+    } else { message.channel.send('files not founded'); }
+  });
+}
+
+client.on('message', message => {
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
 
   const args = message.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase();
 
-  if(command == 'up'){
-    message.guild.members.fetch().then(m => {
-      count =0;
-      let usernames = m.map(u => u.user.username);
-
-      //let roleNumbers = m.map(u => u.roles.cache.filter((roles) => roles.id !== message.guild.id).map((role) => role.toString()));
-      //let isAdmin = message.member.permissions.has((1 << 3));
-      let color = m.map(u => u.displayHexColor);
-      
-      let roleNames = m.map(u => u.roles.cache.filter((roles) => roles.id !== message.guild.id).map((role) => role.name));
-
-      for(let i=0; i< usernames.length; i++){ 
-          const user = new User({
-              usernames: usernames[i].toString(),
-              roleNames: roleNames[i].toString(),
-              color: color[i].toString()
-          });
-          
-          User.find({usernames: usernames[i].toString()}).then(result =>{
-              
-              if(result.length < 1){
-                  
-                  user.save()
-                      .then(result =>{/*console.log(result)*/})
-                      .catch(err =>{console.error(err);});
-                       count++;
-              }});
-             
+  if (command == 'up') {
+    guildUp(message);
+  } else {
+    if (command == 'use') {
+      guildDown(message);
+    } else {
+      if (command == 'd') {
+        User.deleteMany().then(message.channel.send('deleted User'));
+      }
     }
-      message.channel.send('uploaded ' + count + ' users');
-  });
-       //end message fetch 
-  }else{if(command == 'use'){
-      let results = '';
-      User.find().select({_id: 0, usernames: 1, color:1}).then(result =>{
-          //console.log(result);
-          if(result.length > 0){
-              for(let i = 0; result.length > i; i++){
-                  //results += result[i].usernames + ' ' + result[i].color + '\n';
-                  const newEmbed = new Discord.MessageEmbed()
-                  .setColor(result[i].color)
-                  .addFields({name: result[i].usernames.toString()});
-                  message.channel.send(newEmbed);
-              }
-              //const guild =  client.guilds.fetch(guildId);
-              //message.channel.send(guild);
-              
-          }else{message.channel.send('files not founded');}
-      });
-  }else{if(command == 'd'){
-      User.deleteMany().then(message.channel.send('deleted User'));
-  }}}
-}); 
+  }
+
+});
 
 client.login(process.env.TOKEN);
