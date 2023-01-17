@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
     userNames: String,
     roleNames: String,
-    color: String
+    color: String,
+    status: String
 });
 
 module.exports = mongoose.model('User', UserSchema);

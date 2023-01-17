@@ -71,41 +71,56 @@ client.once('ready', () => {
 });
 
 async function guildUp(name) {
-  const Guild = client.guilds.cache.get('1058504488773746760');
+  const Guild = client.guilds.cache.get('711133085046931498');
   //Guild.members.fetch().then(members => {
-    Guild.members.fetch().then(m => {
+  Guild.members.fetch().then(m => {
 
-      let usernames = m.map(u => u.user.username);
-      let color = m.map(u => u.displayHexColor);
-      let roleNames = m.map(u => u.roles.cache.filter((roles) => roles.id !== Guild.id).map((role) => role.name));
+    let usernames = m.map(u => u.user.username);
+    let color = m.map(u => u.displayHexColor);
+    let roleNames = m.map(u => u.roles.cache.filter((roles) => roles.id !== Guild.id).map((role) => role.name));
+    let status = '';
+    let rolesMain = ['Gods', 'Apostol', 'Winged', 'Redskin', 'Scaly', 'Sinner', 'Heretic', 'Rebel'];
 
-    
+    for (let i = 0; i < roleNames.length; i++) {
 
-      for (let i = 0; i < usernames.length; i++) {
-        const user = new User({
-          userNames: usernames[i].toString(),
-          roleNames: roleNames[i].toString(),
-          color: color[i].toString()
-        });
+      for (let j = 0; j < roleNames[i].length; j++) {
 
-        User.find({ userNames: usernames[i].toString() }).then(result => {
-          
-          if (result.length == 0) {
-            user.save()
-              .then(result => {/*console.log(result)*/ })
-              .catch(err => { console.error(err); });
-              count++;
-            console.log(count + ' of 3');
-            if(i == usernames.length-1){
-              if(count != 0){name.channel.send('uploaded ' + count + ' users');}
-            }
-          }else{
-            name.channel.send('no new users');
-            i = usernames.length;
-      }});//name.channel.send('uploaded ' + count + ' users');
-        
+        for (let k = 0; k < rolesMain.length; k++) {
+
+          if (roleNames[i][j] === rolesMain[k]) {
+            
+          }
+        }
       }
-    });
+    }
+
+    for (let i = 0; i < usernames.length; i++) {
+      const user = new User({
+        userNames: usernames[i].toString(),
+        roleNames: roleNames[i].toString(),
+        color: color[i].toString(),
+        status: status
+      });
+
+      User.find({ userNames: usernames[i].toString() }).then(result => {
+
+        if (result.length == 0) {
+          user.save()
+            .then(result => {/*console.log(result)*/ })
+            .catch(err => { console.error(err); });
+          count++;
+          console.log(count + ' of 3');
+          if (i == usernames.length - 1) {
+            if (count != 0) { name.channel.send('uploaded ' + count + ' users'); }
+          }
+        } else {
+          name.channel.send('no new users');
+          i = usernames.length;
+        }
+      });//name.channel.send('uploaded ' + count + ' users');
+
+    }
+  });
   //});
   count = 0;
 }
