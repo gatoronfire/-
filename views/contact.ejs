@@ -3,12 +3,17 @@
     <div id="users">
         <% for (let user in currentUsers) { %>
             <div class="user">
-                
-                <h3 id="name" class="<%= currentUsers[user].roleNames %>"><%= currentUsers[user].userNames %></h3>
+
+                <h3 id="name" class="<%= currentUsers[user].status %>">
+                    <%= currentUsers[user].userNames %>
+                </h3>
                 <div class="line"></div>
                 <div class="dropdown_content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed consequatur aliquid commodi quis modi
+                    quia culpa sunt aliquam. Atque sapiente error accusantium aperiam amet exercitationem eaque qui
+                    voluptatem nobis esse.
                 </div>
             </div>
-                
-            <% } %>            
+
+            <% } %>
     </div>
