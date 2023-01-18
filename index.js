@@ -72,7 +72,6 @@ client.once('ready', () => {
 
 async function guildUp(name) {
   const Guild = client.guilds.cache.get('711133085046931498');
-  //Guild.members.fetch().then(members => {
   Guild.members.fetch().then(m => {
 
     let usernames = m.map(u => u.user.username);
@@ -88,7 +87,7 @@ async function guildUp(name) {
         for (let k = 0; k < rolesMain.length; k++) {
 
           if (roleNames[i][j] === rolesMain[k]) {
-            
+            console.log(rolesMain[k] + ' ' + usernames[i])
           }
         }
       }
@@ -109,19 +108,17 @@ async function guildUp(name) {
             .then(result => {/*console.log(result)*/ })
             .catch(err => { console.error(err); });
           count++;
-          console.log(count + ' of 3');
+          // console.log(count + ' of 3');
           if (i == usernames.length - 1) {
             if (count != 0) { name.channel.send('uploaded ' + count + ' users'); }
           }
         } else {
-          name.channel.send('no new users');
           i = usernames.length;
         }
-      });//name.channel.send('uploaded ' + count + ' users');
+      });
 
     }
   });
-  //});
   count = 0;
 }
 
