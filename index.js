@@ -100,7 +100,8 @@ async function guildUp(name) {
 
                   for (let k = 0; k < rolesMain.length; k++) {
                     if (roleNames[i][j] === rolesMain[k]) {
-                      console.log(roleNames[i][j] + ' ' + usernames[i])//aca estaria el resultado de los roles primarios
+                      //console.log(roleNames[i][j] + ' ' + usernames[i])//aca estaria el resultado de los roles primarios
+                      status.push(rolesMain[k]);
                     }
                   }
                 }
@@ -111,7 +112,7 @@ async function guildUp(name) {
                 userNames: usernames[i].toString(),
                 roleNames: roleNames[i].toString(),
                 color: color[i].toString(),
-                //status: status
+                status: status[i]
             });
 
             User.find({ userNames: usernames[i].toString() }).then(result => {
@@ -130,10 +131,10 @@ async function guildUp(name) {
 
 function guildDown(message) {
     let results = '';
-    User.find().select({ _id: 0, userNames: 1, color: 1 }).then(result => {
+    User.find().select({ _id: 0, userNames: 1, status: 1 }).then(result => {
         if (result.length > 0) {
             for (let i = 0; result.length > i; i++) {
-                results += result[i].userNames + ' ' + result[i].color + '\n';
+                results += result[i].userNames + ' ' + result[i].status + '\n';
             }
             message.channel.send(results);
         } else { message.channel.send('files not founded'); }
