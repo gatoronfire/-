@@ -3,11 +3,11 @@
     --gods: rgb();
     --apostol: rgb();
     --winged: rgb(122, 201, 253);
-    --redskin: rgb();
-    --scaly: rgb();
-    --sinner: rgb();
+    --redskin: rgb(165, 23, 23);
+    --scaly: rgb(54, 131, 47);
+    --sinner: rgb(175, 103, 103);
     --heretic: rgb(255, 255, 255);
-    --rebel: rgb();
+    --rebel: rgb(255, 237, 0);
 }
 
 .Gods {
@@ -99,6 +99,7 @@ p {
     width: 100%;
     list-style-type: none;
     background-color: black;
+    color: darkslategray;
     display: flex;
     justify-content: space-around;
     padding: 10px 0 10px;
