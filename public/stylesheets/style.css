@@ -104,6 +104,7 @@ p {
     justify-content: space-around;
     padding: 10px 0 10px;
     bottom: 0;
+    position: fixed;
 }
 
 #footer a img{
@@ -113,7 +114,9 @@ p {
 }
 #navbar{
     background-color: black;
-    /* position: fixed; */
+     position: fixed; 
+     top: 0;
+     width: 100%;
 }
 
 
