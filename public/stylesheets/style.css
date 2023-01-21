@@ -1,15 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
 :root{
-    --heretic: rgb(255, 255, 255);
+    --gods: rgb();
+    --apostol: rgb();
     --winged: rgb(122, 201, 253);
+    --redskin: rgb();
+    --scaly: rgb();
+    --sinner: rgb();
+    --heretic: rgb(255, 255, 255);
+    --rebel: rgb();
 }
 
-.winged {
+.Gods {
+    color: var(--gods);
+}
+.Apostol {
+    color: var(--apostol);
+}
+.Winged {
     color: var(--winged);
 }
-
-.heretic {
+.Redskin {
+    color: var(--redskin);
+}
+.Scaly {
+    color: var(--scaly);
+}
+.Sinner {
+    color: var(--sinner);
+}
+.Heretic {
     color: var(--heretic);
+}
+.Rebel {
+    color: var(--rebel);
 }
 
 body {
@@ -22,6 +45,12 @@ body {
 header {
     background: black;
     color: white;
+}
+
+#serverInvite {
+    width: 45%;
+    display: block;
+    margin: auto;
 }
 
 h2, h2 a{
@@ -74,7 +103,6 @@ p {
     justify-content: space-around;
     padding: 10px 0 10px;
     bottom: 0;
-    position: fixed;
 }
 
 #footer a img{
