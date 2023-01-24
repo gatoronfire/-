@@ -6,7 +6,7 @@ const UserSchema = new Schema({
     roleNames: String,
     color: String,
     status: String,
-    description: [String]
+    description: String
 });
 
 module.exports = mongoose.model('User', UserSchema);
