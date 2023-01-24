@@ -20,7 +20,7 @@ const client = new Discord.Client();
 let count = 0;
 let results = '';
 
-const prefix = '//';
+const prefix = '--';
 // ---
 
 app.use(express.static('public'));
@@ -112,7 +112,8 @@ async function guildUp(name) {
                 userNames: usernames[i].toString(),
                 roleNames: roleNames[i].toString(),
                 color: color[i].toString(),
-                status: status[i]
+                status: status[i],
+                //description:''
             });
 
             User.find({ userNames: usernames[i].toString() }).then(result => {
@@ -131,14 +132,25 @@ async function guildUp(name) {
 
 function guildDown(message) {
     let results = '';
-    User.find().select({ _id: 0, userNames: 1, status: 1 }).then(result => {
+    User.find().select({ _id: 0, userNames: 1, description: 1 }).then(result => {
         if (result.length > 0) {
             for (let i = 0; result.length > i; i++) {
-                results += result[i].userNames + ' ' + result[i].status + '\n';
+                results += result[i].userNames + ' ' + result[i].description+ '\n';
             }
             message.channel.send(results);
         } else { message.channel.send('files not founded'); }
     });
+}
+
+function description(message){
+    let user = message.member.user.username.toString();
+    let description = message.content.split('--set');
+    User.findOneAndUpdate({userNames:user},{description : description},(err,data)=>{
+        if(err){console.log(err)}else{
+            console.log(data)
+        }
+    })
+    message.channel.send(description)
 }
 
 client.on('message', message => {
@@ -155,7 +167,9 @@ client.on('message', message => {
         } else {
             if (command == 'd') {
                 User.deleteMany().then(message.channel.send('deleted User'));
-            }
+            }else{if(command == 'set'){
+            description(message);
+        }}
         }
     }
 
