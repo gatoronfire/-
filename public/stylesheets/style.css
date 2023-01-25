@@ -214,7 +214,7 @@ height: 2px;
     height: 270px;
 display: flex;
 justify-content: space-around;
-flex-direction: column;
+font-size: 25px;
 }
 .smol{
     height: 120px;

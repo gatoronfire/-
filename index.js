@@ -147,10 +147,14 @@ function guildDown(message) {
 function description(message){
     let user = message.member.user.username.toString();
     let desc = message.content.split('//set').join("");
+    let testing = desc.slice(desc.search('<@'), desc.search('<@')+22);
+    let mentionName = new Collection(message.mentions.users);
+    let finalMessage = desc.replace(testing, mentionName.map(u => u.username.toString()));
+  
 
-    User.findOneAndUpdate({userNames:user},{description:desc},(err,data)=>{
+    User.findOneAndUpdate({userNames:user},{description:finalMessage.trimStart()},(err,data)=>{
         if(err){console.log(err)}else{
-            console.log(data)
+            //  console.log(data)
         }
     })
     message.channel.send(desc)
