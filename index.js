@@ -149,7 +149,7 @@ function description(message){
     let desc = message.content.split('//set').join("");
     let testing = desc.slice(desc.search('<@'), desc.search('<@')+22);
     let mentionName = new Collection(message.mentions.users);
-    let finalMessage = desc.replace(testing, mentionName.map(u => u.username.toString()));
+    let finalMessage = desc.replace(testing,'@' + mentionName.map(u => u.username.toString()));
   
 
     User.findOneAndUpdate({userNames:user},{description:finalMessage.trimStart()},(err,data)=>{
