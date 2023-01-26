@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
-:root{
+
+:root {
     --gods: rgb(98, 9, 139);
     --apostol: rgb(150, 83, 252);
     --winged: rgb(122, 201, 253);
@@ -13,30 +14,37 @@
 .Gods {
     color: var(--gods);
 }
+
 .Apostol {
     color: var(--apostol);
 }
+
 .Winged {
     color: var(--winged);
 }
+
 .Redskin {
     color: var(--redskin);
 }
+
 .Scaly {
     color: var(--scaly);
 }
+
 .Sinner {
     color: var(--sinner);
 }
+
 .Heretic {
     color: var(--heretic);
 }
+
 .Rebel {
     color: var(--rebel);
 }
 
 body {
-    font-family:"Oswald";
+    font-family: "Oswald";
     background-color: #3b3e45;
     margin: 0px;
     padding: 0px;
@@ -47,17 +55,16 @@ header {
     color: white;
 }
 
-#serverInvite{
-    position:absolute;
+#serverInvite {
+    position: absolute;
     width: 353px;
     top: 50px;
-    left : 430px;
+    left: 430px;
     z-index: 1;
-  }
-  
-  #invite
-  {
-    color:rgb(32, 32, 32);
+}
+
+#invite {
+    color: rgb(32, 32, 32);
     position: absolute;
     top: 140px;
     left: 500px;
@@ -67,13 +74,13 @@ header {
     flex-direction: column;
 }
 
-  #invite p {
+#invite p {
     width: 200px;
     text-align: center;
-  }
+}
 
-h2, h2 a{
-    color:#13139b;
+h2, h2 a {
+    color: #13139b;
     margin: 0;
     width: 130px;
     height: 26px;
@@ -126,36 +133,37 @@ p {
     position: fixed;
 }
 
-#footer a img{
+#footer a img {
     display: inline-block;
     width: 40px;
     height: 40px;
 }
-#navbar{
+
+#navbar {
     background-color: black;
-     position: fixed; 
-     top: 0;
-     width: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 
-#navbar .index a{
+#navbar .index a {
     color: white;
     display: inline;
     margin-right: 20px;
     text-decoration-line: none;
 }
 
-#users, #roles{
-    
+#users, #roles {
+
     display: flex;
-justify-content: space-around;
-align-content: center;
-flex-wrap: wrap;
-margin-bottom: 80px;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
 }
 
-.user, .role{
+.user, .role {
     width: 28%;
     height: 400px;
     margin: 80px 0 20px;
@@ -167,7 +175,8 @@ margin-bottom: 80px;
     box-shadow: 0 0 4px 2px rgb(32, 32, 32);
 
 }
-.user li, .role li{
+
+.user li, .role li {
     margin: 10px;
     display: flex;
     justify-content: space-around;
@@ -178,24 +187,28 @@ margin-bottom: 80px;
     font-size: 20px;
 
 }
-.line{
+
+.line {
     height: 2px;
     width: 90%;
     margin: 10px auto 10px auto;
     background-color: gray;
 }
-#name, .roleName{
-text-align: center;
-margin: 10px;
-font-size: 200%;
-height: 2px;
+
+#name, .roleName {
+    text-align: center;
+    margin: 10px;
+    font-size: 200%;
+    height: 2px;
 }
-.logo{
+
+.logo {
     display: inline;
-  margin: 0 auto;
-  width: 45px;
+    margin: 0 auto;
+    width: 45px;
 }
-.image_holder{
+
+.image_holder {
     display: flex;
     justify-content: space-around;
     width: 40px;
@@ -204,12 +217,14 @@ height: 2px;
     overflow: hidden;
     border-radius: 50%;
 }
-.joining{
+
+.joining {
     display: flex;
     justify-content: space-around;
     color: white;
 }
-.joining nav a{
+
+.joining nav a {
     color: #374eca;
     border: 0;
     padding: 0;
@@ -219,25 +234,26 @@ height: 2px;
     font-size: 20px;
     font-family: "Oswald";
     display: flex;
-    justify-content:center;
+    justify-content: center;
     background-color: #2f3136;
     box-shadow: 0 0 4px 2px rgb(32, 32, 32);
     text-decoration-line: none;
     border-radius: 40px;
 }
-.joining nav a:hover{
+
+.joining nav a:hover {
     color: white;
     transition-duration: 1s;
 }
-.dropdown_content{
-    height: 270px;
-display: flex;
-justify-content: space-around;
-font-size: 25px;
+
+.dropdown_content {
+    height: 280px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 25px;
+    text-align: center;
 }
-.smol{
+
+.smol {
     height: 120px;
 }
-
-
-
