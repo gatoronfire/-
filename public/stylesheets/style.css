@@ -59,9 +59,17 @@ header {
   {
     color:rgb(32, 32, 32);
     position: absolute;
-    top: 150px;
+    top: 140px;
     left: 500px;
     z-index: 2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+  #invite p {
+    width: 200px;
+    text-align: center;
   }
 
 h2, h2 a{
