@@ -47,11 +47,22 @@ header {
     color: white;
 }
 
-#serverInvite {
-    width: 45%;
-    display: block;
-    margin: auto;
-}
+#serverInvite{
+    position:absolute;
+    width: 353px;
+    top: 50px;
+    left : 430px;
+    z-index: 1;
+  }
+  
+  #invite
+  {
+    color:rgb(32, 32, 32);
+    position: absolute;
+    top: 150px;
+    left: 500px;
+    z-index: 2;
+  }
 
 h2, h2 a{
     color:#13139b;
