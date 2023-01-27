@@ -58,6 +58,7 @@ header {
 #serverInvite {
     position: absolute;
     width: 25.955882352941vw;
+    height: 38.602941176471vw;
     top: 3.676470588235vw;
     left: 31.617647058824vw;
     z-index: 1;
@@ -140,7 +141,7 @@ p {
 }
 
 #navbar {
-    background-color: black;
+    background-image: linear-gradient(to bottom , black,black,transparent);
     position: fixed;
     top: 0;
     width: 100%;
@@ -199,7 +200,7 @@ p {
     text-align: center;
     margin: 0.735294117647vw;
     font-size: 200%;
-    height: 0.147058823529vw;
+    height: 2px;
 }
 
 .logo {
