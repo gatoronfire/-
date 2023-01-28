@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
-
+@font-face {
+    font-family: blood;
+    src: url('../fonts/Bloodthirsty-3j0p.ttf');
+}
 :root {
     --gods: rgb(98, 9, 139);
     --apostol: rgb(150, 83, 252);
@@ -59,7 +62,7 @@ header {
     position: absolute;
     width: 25.955882352941vw;
     height: 38.602941176471vw;
-    top: 3.676470588235vw;
+    top: 3.5vw;
     left: 31.617647058824vw;
     z-index: 1;
 }
@@ -78,6 +81,8 @@ header {
 #invite p {
     width: 14.705882352941vw;
     text-align: center;
+    margin:0;
+    margin-top: 2.205882352941vw;
 }
 
 h2, h2 a {
@@ -170,7 +175,7 @@ p {
     margin: 5.882352941176vw 0 1.470588235294vw;
     background-color: #2f3136;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     flex-direction: column;
     border-radius: 0.735294117647vw;
     box-shadow: 0 0 0.294117647059vw 0.147058823529vw rgb(32, 32, 32);
@@ -180,7 +185,7 @@ p {
 .user li, .role li {
     margin: 0.735294117647vw;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; 
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -192,15 +197,16 @@ p {
 .line {
     height: 0.147058823529vw;
     width: 90%;
-    margin: 0.735294117647vw auto 0.735294117647vw auto;
+    margin: 0 auto 1.102941176471vw auto;
     background-color: gray;
 }
 
 #name, .roleName {
     text-align: center;
-    margin: 0.735294117647vw;
+    margin: 0;
     font-size: 200%;
-    height: 2px;
+    height: 3.676470588235vw;
+    text-shadow: 0.147058823529vw 0.147058823529vw 0.735294117647vw #000;
 }
 
 .logo {
@@ -225,21 +231,14 @@ p {
     color: white;
 }
 
-.joining nav a {
+.joining div div a{
     color: #374eca;
-    border: 0;
-    padding: 0;
-    width: 11.029411764706vw;
-    height: 2.205882352941vw;
     margin-top: 1.470588235294vw;
-    font-size: 1.470588235294vw;
-    font-family: "Oswald";
+    font-size: 2.5vw;
     display: flex;
     justify-content: center;
-    background-color: #2f3136;
-    box-shadow: 0 0 4px 2px rgb(32, 32, 32);
     text-decoration-line: none;
-    border-radius: 2.941176470588vw;
+    font-family: "blood";
 }
 
 .joining nav a:hover {
