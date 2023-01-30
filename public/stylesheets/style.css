@@ -3,6 +3,14 @@
     font-family: blood;
     src: url('../fonts/Bloodthirsty-3j0p.ttf');
 }
+@-webkit-keyframes Font {
+    0% {color: crimson;}
+    20% {color: orange;}
+    40% {color: goldenrod;}
+    60% {color: green;}
+    80% {color: DarkBlue;}
+    100% {color: purple}
+}
 :root {
     --gods: rgb(133, 21, 185);
     --apostol: rgb(150, 83, 252);
@@ -275,7 +283,7 @@ p {
     box-shadow: 0 0 0.294117647059vw 0.147058823529vw rgb(32, 32, 32);
 }
 .History div .line{background-color: gray;}
-.History h1{color: #13139b;text-shadow: 2px 2px black;}
+.History h1:first-child{color: #13139b;text-shadow: 2px 2px black;}
 .History p{
     width: 90%;
     height: 90%;
@@ -284,3 +292,6 @@ p {
     font-size: 22px;
     font-weight: 600;
 }
+.History h1:nth-child(1){
+    -webkit-animation:Font 5s infinite alternate;
+  }
