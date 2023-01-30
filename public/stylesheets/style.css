@@ -275,6 +275,7 @@ p {
     box-shadow: 0 0 0.294117647059vw 0.147058823529vw rgb(32, 32, 32);
 }
 .History div .line{background-color: gray;}
+.History h1{color: #13139b;text-shadow: 2px 2px black;}
 .History p{
     width: 90%;
     height: 90%;
