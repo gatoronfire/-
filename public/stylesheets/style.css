@@ -130,7 +130,7 @@ p {
 #footer {
     width: 100%;
     list-style-type: none;
-    background-color: black;
+    background-image: linear-gradient(to bottom,transparent, black,black);
     color: darkslategray;
     display: flex;
     justify-content: space-around;
@@ -175,7 +175,7 @@ p {
     margin: 5.882352941176vw 0 1.470588235294vw;
     background-color: #2f3136;
     display: flex;
-    /* justify-content: space-around; */
+    justify-content: space-around;
     flex-direction: column;
     border-radius: 0.735294117647vw;
     box-shadow: 0 0 0.294117647059vw 0.147058823529vw rgb(32, 32, 32);
@@ -255,5 +255,5 @@ p {
 }
 
 .smol {
-    height: 8.823529411765vw;
+    height: 14.705882352941vw;
 }
