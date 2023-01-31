@@ -138,7 +138,7 @@ p {
 #footer {
     width: 100%;
     list-style-type: none;
-    background-image: linear-gradient(to bottom,transparent, black,black);
+    background-color: black;
     color: darkslategray;
     display: flex;
     justify-content: space-around;
