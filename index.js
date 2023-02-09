@@ -44,6 +44,9 @@ app.listen(3000, () => {
     console.log('Listening at port 3000');
 });
 
+
+// document.getElementById('clickMe').addEventListener("click",guildUp)
+
 mongoose.set('strictQuery', true);
 
 function loginDB() {
@@ -74,7 +77,7 @@ client.once('ready', () => {
     console.log('final bot online')
 });
 
-async function guildUp(name) {
+async function guildUp() {
     const Guild = client.guilds.cache.get('711133085046931498');
     Guild.members.fetch().then(async m => {
 
@@ -126,6 +129,7 @@ async function guildUp(name) {
             });
         }
     })
+    console.log('guildUp')
 };
 
 
@@ -166,8 +170,9 @@ client.on('message', message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
+
     if (command == 'up') {
-        guildUp(message);
+        guildUp();
     } else {
         if (command == 'use') {
             guildDown(message);
@@ -181,5 +186,4 @@ client.on('message', message => {
     }
 
 });
-
 client.login(process.env.TOKEN);
